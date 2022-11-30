@@ -1,6 +1,6 @@
 {
   "name": "@useflash/client",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Javascript library for Flash Analytics API | useflash.gg",
   "publishConfig": {
     "access": "public"
