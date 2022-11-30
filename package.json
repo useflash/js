@@ -1,0 +1,6 @@
+{
+  "name": "@useflash/js",
+  "devDependencies": {
+    "@changesets/cli": "^2.25.2"
+  }
+}
