@@ -1,9 +1,9 @@
 import { Useflash, Events } from "@useflash/client";
 
 const analytics = () => {
-    const token = GetResourceMetadata("useflash", "settings", 0)
+    const token = GetResourceMetadata("useflash", "credentials", 0)
 
-    return new Useflash(token)
+    return new Useflash(token, true)
 }
 
 on("onServerResourceStart", async () => {
