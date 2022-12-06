@@ -12,8 +12,12 @@ class Useflash {
     public async fire(eventName: string, payload: Record<string, unknown> = {}) {
         return await this.httpClient.request("POST", `api/fire/${this.token}`, {
             name: eventName,
-            ...payload
+            payload
         })
+    }
+
+    public async heartbeat(payload: HeartbeatPayload = {}) {
+        return await this.fire(Events.Heartbeat, payload)
     }
 }
 

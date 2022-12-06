@@ -1,4 +1,6 @@
-import { Useflash, Events } from "@useflash/client";
+import { Useflash } from "@useflash/client";
+import { NetworkEventConstants } from "./constants";
+import heartbeat from "./heartbeat";
 
 const analytics = () => {
     const token = GetResourceMetadata("useflash", "credentials", 0)
@@ -6,12 +8,19 @@ const analytics = () => {
     return new Useflash(token, true)
 }
 
-on("onServerResourceStart", async () => {
-    const client = analytics();
+const client = analytics();
 
-    client.fire(Events.ServerStarted).then(response => {
-        console.log(response);
-    }).catch(error => {
-        console.error(error)
-    })
+/**
+ * Network events for firing Flash Analytics endpoint
+ */
+onNet(NetworkEventConstants.Fire, async (eventName: string, payload: Record<string, unknown>) => {
+    await client.fire(eventName, payload)
 })
+onNet(NetworkEventConstants.Heartbeat, async (payload: Record<string, unknown>) => {
+    await client.heartbeat(payload)
+})
+
+/**
+ * Run heartbeat polling
+ */
+heartbeat()

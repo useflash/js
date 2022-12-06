@@ -26,13 +26,13 @@ importers:
 
   playgrounds/fivem:
     specifiers:
-      '@citizenfx/server': ^1.0.2792-1
+      '@citizenfx/server': 2.0.6103-1
       '@types/node': ^14.0.27
       '@useflash/client': workspace:*
       tsup: 6.0.1
       typescript: 4.5.4
     dependencies:
-      '@citizenfx/server': 1.0.2792-1
+      '@citizenfx/server': 2.0.6103-1
       '@types/node': 14.18.34
     devDependencies:
       '@useflash/client': link:../../packages/client
@@ -252,8 +252,8 @@ packages:
       prettier: 2.8.0
     dev: true
 
-  /@citizenfx/server/1.0.2792-1:
-    resolution: {integrity: sha512-5ploPqoLYIJf2lceMK9smGNfiQz8V+XCM+0rlOhScMyj6fGcu3F+GHtwZB2dlUdbWu4WTSEUPja8qpAY4YnVtA==}
+  /@citizenfx/server/2.0.6103-1:
+    resolution: {integrity: sha512-nmS4Yl+S6+F8CoWw+Iye946ElQdRKXGVismq2GucmR/waiFZd1NNz09yqAyS2PVLwhi9dDu2QgalCCARFRAU8A==}
     dev: false
 
   /@egoist/prettier-config/1.0.0:
